@@ -14,7 +14,6 @@ export class UsersController {
         return users
     }
 
-    @UseGuards(JwtAuthGuard)
     @Get(':email')
     async findUser(@Param('email') email: string){
         const getUser = await this.usersService.findByEmail(email)

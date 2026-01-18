@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, BeforeUpdate, OneToMany } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { Tarefas } from 'src/tarefas/tarefas.entity';
+import { Tarefas } from '../../tarefas/entity/tarefas.entity';
 
 @Entity()
 export class Users {

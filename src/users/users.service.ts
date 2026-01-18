@@ -26,7 +26,7 @@ async createUser(userBody: UsersDTO){
 async deleteUser(id: number){ 
     const gettingID = await this.UsersRepository.findOne({where: {id}})
     if(!gettingID){
-        throw new NotFoundException("Usuário não encontrado")
+        throw new NotFoundException("Email não encontrado")
     }
 
     await this.UsersRepository.delete(id)
@@ -50,14 +50,10 @@ async updateUser(id:number, userBody: UsersDTO){
 async findByEmail(email: string){
     const gettingEmail = await this.UsersRepository.findOne({where: {email}})
     if(!gettingEmail){
-        throw new NotFoundException("Usuário não encontrado")
+        throw new NotFoundException("Email não encontrado")
     }
 
     return gettingEmail;
 }
-
-
-
-
 
 }
