@@ -3,7 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Tarefas } from './entity/tarefas.entity';
 import { TarefasDTO } from './dto/upsert-dto.tarefas';
-import { Users } from '../users/entity/users.entity';
+import { Users} from 'src/users/entity/users.entity';
+
 
 @Injectable()
 export class TarefasService {   
@@ -17,46 +18,36 @@ getAll(){
     return this.TarefasRepository.find()
     }
 
-async create(taskBody: TarefasDTO, userID: number){
-    const user = await this.UsersRepository.findOneBy({ id: userID});
-    if(!user){
-        throw new NotFoundException("Usuário não encontrado")
-    }
-
-    const newtarefa = await this.TarefasRepository.create(taskBody)
-    await this.TarefasRepository.save(newtarefa)
+async create(taskBody: TarefasDTO) {
+    const newtask = await this.TarefasRepository.create(taskBody)
+    await this.TarefasRepository.save(newtask);
 
     return {
-        message: "Tarefa criada com sucesso!"
+    message: "Tarefa criada com sucesso!",
     }
 }
 
-async delete(taskid: number, userId: number){
-    const deletedTask = await this.TarefasRepository.findOne({where: {id: taskid, user: {id: userId}}})
-    if(!deletedTask){
-        throw new ForbiddenException("Você não pode deletar essa tarefa")
-    }
-    
-    return this.TarefasRepository.remove(deletedTask)
-    
+async delete(id: number) {
+  const task = await this.TarefasRepository.findOne({where: {id}})
+  if (!task) {
+    throw new NotFoundException('Tarefa não encontrada');
+  }
+
+  await this.TarefasRepository.delete(task);
+
+  return { message: 'Tarefa deletada com sucesso' };
 }
 
-async update(taskBody: TarefasDTO, taskid:number, userId: number){
-    const gettingID = await this.TarefasRepository.findOne({where: {id: taskid, user: {id: userId}}})
+async update(taskBody: TarefasDTO, id:number){
+    const gettingID = await this.TarefasRepository.findOne({where: {id}})
     if(!gettingID){
-        throw new ForbiddenException("Você não pode editar essa tarefa")
+        throw new NotFoundException("Tarefa não encontrada")
     }
 
-    Object.assign(gettingID, taskBody)  
-    await this.TarefasRepository.save(gettingID)
-    return {
-        message: "Tarefa atualizada com sucesso"
+    await this.TarefasRepository.update(id, taskBody)
+    return{
+      message: "Tarefa Atualizada"
     }
 }
-
-async findByUser(userId: number){
-    return this.TarefasRepository.find({where: {user: {id: userId}}});
-}
-
 
 }

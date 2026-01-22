@@ -10,26 +10,26 @@ export class TarefasController {
     
    @UseGuards(JwtAuthGuard)
     @Get('')
-    findMyTasks(@Req() req) {
-    return this.tarefasService.findByUser(req.user.id);
+    findtasks() {
+    return this.tarefasService.getAll();
 }
 
     @UseGuards(JwtAuthGuard)
     @Post('')
-    createTasks(@Body() taskBody: TarefasDTO, @Req() req){
-       return this.tarefasService.create(taskBody, req.user.id)
+    createTasks(@Body() taskBody: TarefasDTO){
+       return this.tarefasService.create(taskBody)
     }
 
     @UseGuards(JwtAuthGuard)
     @Put(':id')
-    update(@Param('id') id: number, @Body()taskBody: TarefasDTO, @Req() req){
-        return this.tarefasService.update(taskBody, id, req.user.id)
+    update(@Param('id') id: number, @Body()taskBody: TarefasDTO,){
+        return this.tarefasService.update(taskBody, id)
     }
 
     @UseGuards(JwtAuthGuard)
     @Delete(':id')
-    delete(@Param('id') taskid: number, @Req() req){
-        return this.tarefasService.delete(Number(taskid), req.user.id)
+    delete(@Param('id') taskid: number){
+        return this.tarefasService.delete(taskid)
     }
 
 

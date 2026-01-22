@@ -1,0 +1,314 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1767813640099
+  modified: 1767813640099
+  description: ""
+collection:
+  - name: Tasks
+    meta:
+      id: fld_e06e1dc8f7c047f6a50943ef02899cd5
+      created: 1768665982046
+      modified: 1768666025369
+      sortKey: -1768665982046
+      description: ""
+    children:
+      - url: http://localhost:3000/tarefas
+        name: Create Task
+        meta:
+          id: req_50752b89afc94bc4a5c5274f88195ceb
+          created: 1767895185288
+          modified: 1768844666489
+          isPrivate: false
+          description: ""
+          sortKey: -1768665986617
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"objetivo":"ir para4424awawf o trampo",
+            	"titulo": "trabalhar",
+            	"descricao":"tomar banho escovar os dentes se arrumar e ir pro trabalho"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTc2ODg0NDY1MSwiZXhwIjoxNzY4OTMxMDUxfQ.ICpJywVE0JH5qf7p2UVbxQwxRSJSmJogz6-kqcgYGPs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tarefas
+        name: Get All Tasks
+        meta:
+          id: req_ae56b63a6c9545b49037087bcf0f492e
+          created: 1767895603199
+          modified: 1768844625215
+          isPrivate: false
+          description: ""
+          sortKey: -1768665986517
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTc2ODg0NDYwNywiZXhwIjoxNzY4OTMxMDA3fQ.qW2Ppk0vTDFNugGYE2FD3b15s9kszrfhDP-mL9XyMtI
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tarefas/1
+        name: Update Task
+        meta:
+          id: req_49574f8e7196456d91d6895c0f124126
+          created: 1768489061826
+          modified: 1768666016051
+          isPrivate: false
+          description: ""
+          sortKey: -1768665986417
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"titulo":"Arrumar cama",
+            	"objetivo":"arrumar toda a bagunca que esta na cama",
+            	"descricao":"Arrumar tudo"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/tarefas/5
+        name: Delete Task
+        meta:
+          id: req_4138d6f6bf3b4f06a21b8a72b9bb59cd
+          created: 1768489262708
+          modified: 1768698417096
+          isPrivate: false
+          description: ""
+          sortKey: -1768665986317
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTc2ODY5ODQwMCwiZXhwIjoxNzY4Nzg0ODAwfQ.bBo7O-iFKV_8jnxitj9G41c96R3kn2mQBitCf-KRw0Y
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Users
+    meta:
+      id: fld_a2bbf725a3d040eba5b105e734126aac
+      created: 1768666029833
+      modified: 1768693676481
+      sortKey: -1768666029833
+      description: ""
+    children:
+      - url: http://localhost:3000/users
+        name: Get All Users
+        meta:
+          id: req_a91ed38abec844dbb8091328fd03b5ff
+          created: 1768666032920
+          modified: 1768667317203
+          isPrivate: false
+          description: ""
+          sortKey: -1768666714145
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/users
+        name: Create User
+        meta:
+          id: req_64308e57ae114a5db7e141b19886af65
+          created: 1768666713995
+          modified: 1768844641440
+          isPrivate: false
+          description: ""
+          sortKey: -1768666714195
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "weberson242@gmail.com",
+            	"password": "Jiren978@"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/users/1
+        name: Delete User
+        meta:
+          id: req_4855ec7631a849e197427954f819a2be
+          created: 1768666837121
+          modified: 1768844696435
+          isPrivate: false
+          description: ""
+          sortKey: -1768666714095
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImlhdCI6MTc2ODg0NDY1MSwiZXhwIjoxNzY4OTMxMDUxfQ.ICpJywVE0JH5qf7p2UVbxQwxRSJSmJogz6-kqcgYGPs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/users/1
+        name: Update User
+        meta:
+          id: req_f74978c746bc4460b1620fa4e528546b
+          created: 1768667208042
+          modified: 1768667322879
+          isPrivate: false
+          description: ""
+          sortKey: -1768666714120
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "webersonrodriguez@gmail.com",
+            	"password": "Jiren978@"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Login
+    meta:
+      id: fld_f5431bc8356a4f1bac446861c79bae5d
+      created: 1768693663087
+      modified: 1768693663087
+      sortKey: -1768693663087
+      description: ""
+    children:
+      - url: http://localhost:3000/auth/login
+        name: Login
+        meta:
+          id: req_bb019b63cce14f3395ff45a3ae1bc68d
+          created: 1768669088087
+          modified: 1768844651129
+          isPrivate: false
+          description: ""
+          sortKey: -1768693672684
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "weberson242@gmail.com",
+            	"password": "Jiren978@"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1767813645763
+    modified: 1767813645763
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1767813645762
+    modified: 1767813645762
+    isPrivate: false
