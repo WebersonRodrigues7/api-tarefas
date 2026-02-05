@@ -16,8 +16,8 @@ export class TarefasController {
 
     @UseGuards(JwtAuthGuard)
     @Post('')
-    createTasks(@Body() taskBody: TarefasDTO){
-       return this.tarefasService.create(taskBody)
+    createTasks(@Body() taskBody: TarefasDTO, @Req() req){
+       return this.tarefasService.create(taskBody, req.user.userId)
     }
 
     @UseGuards(JwtAuthGuard)

@@ -18,8 +18,16 @@ getAll(){
     return this.TarefasRepository.find()
     }
 
-async create(taskBody: TarefasDTO) {
-    const newtask = await this.TarefasRepository.create(taskBody)
+async create(taskBody: TarefasDTO, userId: number) {
+    const user = await this.UsersRepository.findOne({where: {id: userId}})
+    if(!user){
+        throw new NotFoundException
+    }
+
+    const newtask = this.TarefasRepository.create({
+        ...taskBody,
+        user: user
+    })
     await this.TarefasRepository.save(newtask);
 
     return {

@@ -15,6 +15,6 @@ export class Tarefas {
   @Column()
   descricao: string;
 
-  @ManyToOne(() => Users, (userId) => userId.tarefas, { onDelete: "CASCADE"})
-  userId: Users;
+  @ManyToOne(() => Users, (user) => user.tarefas, { onDelete: "CASCADE"})
+  user: Users;
 }

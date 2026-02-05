@@ -22,6 +22,6 @@ export class Users {
     }
   }
 
-  @OneToMany(() => Tarefas, (tarefas) => tarefas.userId)
+  @OneToMany(() => Tarefas, (tarefas) => tarefas.user)
   tarefas: Tarefas[]
 }
