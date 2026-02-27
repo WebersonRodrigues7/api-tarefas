@@ -1,7 +1,7 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Users } from './entity/users.entity';
-import { Repository } from 'typeorm';
+import {  Repository } from 'typeorm';
 import { UsersDTO } from './dto/upsert-dto.users';
 
 @Injectable()
@@ -17,6 +17,13 @@ getAll(){
 
 async createUser(userBody: UsersDTO){
     const gettingInfo = await this.UsersRepository.create(userBody);
+    const userExists = await this.UsersRepository.findOne({
+            where: { email: userBody.email }
+        });
+
+        if (userExists) {
+            throw new ConflictException('Email já está em uso');
+        }
     await this.UsersRepository.save(gettingInfo);
     return {
         message: "Usuário criado!"
@@ -28,7 +35,6 @@ async deleteUser(id: number){
     if(!gettingID){
         throw new NotFoundException("Email não encontrado")
     }
-
     await this.UsersRepository.delete(id)
     return {
         message: "Usuário deletado!"

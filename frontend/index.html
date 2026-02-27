@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarefas</title>
+  
+</head>
+<body>
+
+  <h2>Tarefas</h2>
+
+  <form id="taskForm">
+    <input id="titulo" name="titulo" type="text" placeholder="Título da tarefa" required />
+    <br />
+
+    <input id="objetivo" name="objetivo" type="text" placeholder="Objetivo da tarefa" required />
+    <br />
+
+    <input id="descricao" name="descricao" type="text" placeholder="Descrição da tarefa" required />
+    <br />
+
+    <button type="submit">Criar tarefa</button>
+  </form>
+
+  <hr />
+
+  <ul id="taskList"></ul>
+
+  <a href="profile.html">
+  <button type="button">Perfil</button>
+</a>
+
+  <button id="logoutBtn" type="button">Logout</button>
+
+  <!-- ✅ Script sempre no final -->
+  <script src="js/script.js"></script>
+</body>
+</html>

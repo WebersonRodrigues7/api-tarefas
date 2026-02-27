@@ -36,12 +36,15 @@ async create(taskBody: TarefasDTO, userId: number) {
 }
 
 async delete(id: number) {
-  const task = await this.TarefasRepository.findOne({where: {id}})
+  const task = await this.TarefasRepository.findOne({
+    where: { id: Number(id) }
+  });
+
   if (!task) {
     throw new NotFoundException('Tarefa não encontrada');
   }
 
-  await this.TarefasRepository.delete(task);
+  await this.TarefasRepository.remove(task);
 
   return { message: 'Tarefa deletada com sucesso' };
 }
