@@ -14,8 +14,11 @@ export class TarefasService {
     private UsersRepository: Repository<Users>
 ){}
 
-getAll(){
-    return this.TarefasRepository.find()
+getAll(userId: number){
+    
+    return this.TarefasRepository.find({    
+        where: {user: {id: userId}}
+    })
     }
 
 async create(taskBody: TarefasDTO, userId: number) {

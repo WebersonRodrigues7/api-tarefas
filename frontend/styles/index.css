@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+.container {
+    background-color: #195e96;
+    margin: auto;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.oth-itens {
+    margin-top: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+}
+
+input {
+    text-align: center;
+    width: 200px;
+    height: 25px;
+    margin-top: 20px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 3px 1px 5px  rgba(0, 0, 0, 0.541);
+}
+
+
+#titulo {
+  margin: auto;
+}
+
+.linha {
+    display: flex;
+    gap: 12px;
+    margin: 0px 20px 10px 20px;
+}
+
+.linha input {
+    flex: 1;
+}
+
+#create-task {
+    background-color: #ffffff;
+    font-weight: bolder;
+    margin: auto;
+    border: none;
+    border-radius: 4px;
+    width: 150px;
+    height: 30px;
+}
+
+#create-task:hover {
+    transform: translateY(-1px);
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+#taskList {
+    list-style-type: none;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap; 
+    padding: 0;
+}
+
+
+
+#taskList li {
+    background-color: white;
+    border-radius: 7px;
+    width: 300px;
+    min-height: 200px;
+    margin-left: 0px;
+    text-indent: 2px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.63);
+}
+
+#taskList li b {
+    font-size: 1.2em;
+}
+
+#taskList li div {
+    color: rgb(92, 91, 91);
+    margin-top: 5px;
+    font-size: 0.75em;
+    word-wrap: break-word;   
+    overflow-wrap: break-word;
+    
+}
+
+.editBtn {
+    color: white;
+    display: flex;
+    background-color: #2382cf;
+    margin-top: 10px;
+    margin-left: 17%;
+    justify-content:center;
+    padding-top: 7px;
+    border: none;
+    border-radius: 3px;
+    height: 30px;
+    width: 200px;
+    box-shadow: 1px 1px 3px black;
+}
+
+.deleteBtn {
+    color: white;
+    display: flex;
+    background-color: rgb(247, 37, 37);
+    margin-top: 10px;
+    margin-left: 17%;
+    justify-content:center;
+    padding-top: 7px;
+    border: none;
+    border-radius: 3px;
+    height: 30px;
+    width: 200px;
+    box-shadow: 1px 1px 3px black;
+}
+
+.deleteBtn:hover {
+    transform: translateY(-1px);
+    background-color: rgb(212, 28, 28);
+    cursor: pointer;
+}
+
+.editBtn:hover {
+    transform: translateY(-1px);
+    background-color: #1d6bac;
+    cursor: pointer;
+
+}
+
+#profref {
+    display: inline-block;
+}
+.profile {
+    background-color: rgb(129, 129, 129);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    width: 150px;
+    margin-top: 20px;
+    height: 50px;
+    padding: 17px;
+    font-weight: bold;
+}
+
+.profile:hover {
+    transform: translateY(-1px);
+    background-color: rgb(94, 93, 93);
+    cursor: pointer;
+}
+
+#logoutBtn {
+    background-color: rgb(250, 30, 30);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 17px;
+    font-weight: bold;
+}
+
+#logoutBtn:hover {
+    background-color: rgb(211, 20, 20);
+    transform: translateY(-1px);
+}
+
+
+

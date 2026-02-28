@@ -10,8 +10,8 @@ export class TarefasController {
     
    @UseGuards(JwtAuthGuard)
     @Get('')
-    findtasks() {
-    return this.tarefasService.getAll();
+    findtasks(@Req() req) {
+    return this.tarefasService.getAll(req.user.userId);
 }
 
     @UseGuards(JwtAuthGuard)

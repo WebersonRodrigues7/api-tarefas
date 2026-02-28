@@ -4,36 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tarefas</title>
+  <link rel="stylesheet" href="styles/index.css">
   
 </head>
 <body>
 
-  <h2>Tarefas</h2>
+  <div class="container">
+    <h2>Criar tarefas</h2>
+    <form id="taskForm">
+      <input id="titulo" name="titulo" type="text" placeholder="Título da tarefa" required />
+      <br />
+      <div class="linha">
+        <input class="flex-input" id="objetivo" name="objetivo" type="text" placeholder="Objetivo da tarefa" required />
+        <br />
+        <input class="flex-input" id="descricao" name="descricao" type="text" placeholder="Descrição da tarefa" required />
+        <br />
+      </div>
+      <button id="create-task" type="submit">CRIAR TAREFA</button>
+    </form> 
+  </div>
 
-  <form id="taskForm">
-    <input id="titulo" name="titulo" type="text" placeholder="Título da tarefa" required />
-    <br />
 
-    <input id="objetivo" name="objetivo" type="text" placeholder="Objetivo da tarefa" required />
-    <br />
 
-    <input id="descricao" name="descricao" type="text" placeholder="Descrição da tarefa" required />
-    <br />
-
-    <button type="submit">Criar tarefa</button>
-  </form>
-
-  <hr />
-
-  <ul id="taskList"></ul>
-
-  <a href="profile.html">
-  <button type="button">Perfil</button>
-</a>
-
-  <button id="logoutBtn" type="button">Logout</button>
-
-  <!-- ✅ Script sempre no final -->
-  <script src="js/script.js"></script>
+  <div class="oth-itens">
+    <ul id="taskList"></ul>
+    <a id="profref" href="profile.html">
+    <button class="profile" type="button">PERFIL</button>
+    </a>
+    <button id="logoutBtn" type="button">LOGOUT</button>
+    
+    <script src="js/script.js"></script>
+  </div>
 </body>
 </html>

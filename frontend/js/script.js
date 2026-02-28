@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <button class="editBtn" data-id="${id}">Editar</button>
         <button class="deleteBtn" data-id="${id}">Deletar</button>
-        <hr/>
+        
       `;
 
       list.appendChild(li);
