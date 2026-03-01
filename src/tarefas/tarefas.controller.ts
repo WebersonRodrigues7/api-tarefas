@@ -12,7 +12,7 @@ export class TarefasController {
     @Get('')
     findtasks(@Req() req) {
     return this.tarefasService.getAll(req.user.userId);
-}
+    }
 
     @UseGuards(JwtAuthGuard)
     @Post('')
@@ -30,6 +30,12 @@ export class TarefasController {
     @Delete(':id')
     delete(@Param('id') taskid: number){
         return this.tarefasService.delete(taskid)
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Delete(':id')
+    logicDelete(@Param('id') taskid: number){
+        return this.tarefasService.logicDelete(taskid)
     }
 
 

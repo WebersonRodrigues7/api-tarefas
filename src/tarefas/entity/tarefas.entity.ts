@@ -15,6 +15,9 @@ export class Tarefas {
   @Column()
   descricao: string;
 
+  @Column({default: true})
+  active: boolean;
+
   @ManyToOne(() => Users, (user) => user.tarefas, { onDelete: "CASCADE"})
   user: Users;
 }

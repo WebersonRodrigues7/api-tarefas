@@ -41,17 +41,31 @@ async deleteUser(id: number){
     }
 }
 
-async updateUser(id:number, userBody: UsersDTO){
-    const gettingID = await this.UsersRepository.findOne({where: {id}})
-    if(!gettingID){
-        throw new NotFoundException("Usuário não encontrado")
-    }
-    
-    await this.UsersRepository.update(id, userBody)
-    return {
-        message: "Usuário atualizado!"
-    }
+async updateUser(id: number, userBody: UsersDTO) {
+
+  const user = await this.UsersRepository.findOne({
+    where: { id }
+  });
+
+  if (!user) {
+    throw new NotFoundException("Usuário não encontrado");
+  }
+
+  // altera na entidade carregada
+  if (userBody.email !== undefined) {
+    user.email = userBody.email;
+  }
+
+  if (userBody.password !== undefined) {
+    user.password = userBody.password;
+  }
+
+  // AGORA o hook roda
+  await this.UsersRepository.save(user);
+
+  return { message: "Usuário atualizado!" };
 }
+
 
 async findByEmail(email: string){
     const gettingEmail = await this.UsersRepository.findOne({where: {email}})

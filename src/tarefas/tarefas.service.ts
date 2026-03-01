@@ -52,6 +52,17 @@ async delete(id: number) {
   return { message: 'Tarefa deletada com sucesso' };
 }
 
+async logicDelete(id: number){
+    const gettingID = await this.TarefasRepository.find({where: {id}})
+    if(!gettingID) throw new NotFoundException
+
+    await this.TarefasRepository.update(id, {active: false})
+
+    return {
+        message: "Tarefa Concluida"
+    }
+}
+
 async update(taskBody: TarefasDTO, id:number){
     const gettingID = await this.TarefasRepository.findOne({where: {id}})
     if(!gettingID){

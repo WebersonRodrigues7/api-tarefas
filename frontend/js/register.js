@@ -1,5 +1,4 @@
 
-console.log('JS carregou');
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('registerForm');
 
