@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TarefasModule } from './tarefas/tarefas.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -19,12 +20,13 @@ import { AuthModule } from './auth/auth.module';
       password: process.env.DB_PASSWORD || '',
       database: process.env.DB_NAME,
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     }),
 
     TarefasModule,
     UsersModule,
     AuthModule,
   ],
+  controllers: [AppController]
 })
 export class AppModule {}

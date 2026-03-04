@@ -9,7 +9,7 @@ export default new DataSource({
   username: "root",
   password: "",
   database: "tarefas",
-  synchronize: false,
+  synchronize: true,
   migrations: ['dist/migrations/*.js'],
   entities: [Tarefas, Users],
 });
