@@ -75,7 +75,7 @@ a:hover {
     color: rgb(211, 210, 210);
 }
 
-@media (min-width: 450px) {
+@media (max-width: 500px) {
     .container {
         left: 10%;
     }

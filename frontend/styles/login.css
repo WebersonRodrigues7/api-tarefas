@@ -124,7 +124,7 @@ button:hover {
     color: white;
 }
 
-@media (min-width: 450px) {
+@media (max-width: 500px) {
     .container {
         left: 25%;
     }
