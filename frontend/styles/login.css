@@ -27,6 +27,7 @@ body {
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     
+    
 }
 
 #cadar {
@@ -123,3 +124,8 @@ button:hover {
     color: white;
 }
 
+@media (min-width: 450px) {
+    .container {
+        left: 25%;
+    }
+}
