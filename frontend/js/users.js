@@ -1,4 +1,4 @@
-const API_USERS = "http://localhost:3000/users";
+const API_USERS = "https://api-tarefas-tau.vercel.app/users";
 const token = localStorage.getItem("token");
 
 // jwt token 

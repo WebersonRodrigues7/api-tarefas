@@ -7,7 +7,7 @@ form.addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value;
 
   const response = await fetch(
-    "http://localhost:3000/auth/login",
+    "https://api-tarefas-tau.vercel.app/auth/login",
     {
       method: "POST",
       headers: {

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 
-  const API_BASE = "http://localhost:3000/tarefas";
+  const API_BASE = "https://api-tarefas-tau.vercel.app/tarefas";
 
   const token = localStorage.getItem("token");
   if (!token) {

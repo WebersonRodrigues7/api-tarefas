@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const body = Object.fromEntries(new FormData(form));
 
-    const response = await fetch('http://localhost:3000/users', {
+    const response = await fetch('https://api-tarefas-tau.vercel.app/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
