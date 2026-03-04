@@ -41,7 +41,7 @@ form{
 
 input {
     text-align: center;
-    width: 200px;
+    width: 300px;
     height: 25px;
     margin-top: 20px;
     border-radius: 7px;
@@ -61,7 +61,11 @@ input {
 }
 
 .linha input {
+    
     flex: 1;
+}
+.flex-input {
+    width: 10px;
 }
 
 #create-task {
