@@ -9,10 +9,8 @@ import { AppController } from './app.controller';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    
-      
+
     TypeOrmModule.forRoot({
-      
       type: 'mysql',
       host: process.env.DB_HOST,
       port: Number(process.env.DB_PORT),
