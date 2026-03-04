@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Req, UseGuards } from '@nestjs/common';
 import { TarefasService } from './tarefas.service';
 import { TarefasDTO } from './dto/upsert-dto.tarefas';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard/jwt-auth.guard';
 
 @Controller('tarefas')
 export class TarefasController {
