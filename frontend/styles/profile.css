@@ -75,8 +75,21 @@ a:hover {
     color: rgb(211, 210, 210);
 }
 
-@media (max-width: 500px) {
-    .container {
-        left: 10%;
-    }
+
+@media (max-width: 600px) {
+  .container {
+    left: 12%;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    left: 6%;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    left: 2%;
+  }
 }

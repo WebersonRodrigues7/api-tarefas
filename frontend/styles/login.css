@@ -124,8 +124,21 @@ button:hover {
     color: white;
 }
 
-@media (max-width: 500px) {
-    .container {
-        left: 25%;
-    }
+@media (max-width: 600px) {
+  .container {
+    left: 25%;
+  }
 }
+
+@media (max-width: 420px) {
+  .container {
+    left: 12%;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    left: 6%;
+  }
+}
+
