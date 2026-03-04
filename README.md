@@ -21,78 +21,156 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Gerenciador de Tarefas
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Aplicação web simples para gerenciamento de tarefas com autenticação de usuário.  
+O sistema permite criar uma conta, realizar login e gerenciar tarefas pessoais (criar, editar e excluir).
 
-## Project setup
+O frontend está hospedado no **Vercel** e se comunica com uma **API desenvolvida em NestJS** conectada a um banco de dados **MySQL**.
 
-```bash
-$ npm install
-```
+---
 
-## Compile and run the project
+# Acesso ao projeto
 
-```bash
-# development
-$ npm run start
+Frontend online:
 
-# watch mode
-$ npm run start:dev
+🔗 https://gerenciador-de-tarefas-five-iota.vercel.app/login.html
 
-# production mode
-$ npm run start:prod
-```
+---
 
-## Run tests
+# Funcionalidades
 
-```bash
-# unit tests
-$ npm run test
+- Cadastro de usuário
+- Login com autenticação JWT
+- Criação de tarefas
+- Listagem de tarefas do usuário
+- Edição de tarefas
+- Exclusão de tarefas
+- Atualização de dados do usuário
+- Exclusão da conta
 
-# e2e tests
-$ npm run test:e2e
+Cada usuário possui acesso apenas às próprias tarefas.
 
-# test coverage
-$ npm run test:cov
-```
+---
 
-## Deployment
+# Tecnologias utilizadas
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+## Frontend
+- HTML
+- CSS
+- JavaScript (Vanilla JS)
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## Backend
+- NestJS
+- TypeORM
+- JWT para autenticação
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+## Banco de dados
+- MySQL
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## Infraestrutura
+- Vercel (frontend e API)
+- Railway (banco de dados)
 
-## Resources
+---
 
-Check out a few resources that may come in handy when working with NestJS:
+# Estrutura do projeto
+frontend/
+src/
+migrations/
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
 
-## Support
+### Principais partes
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+**frontend** → páginas HTML, CSS e scripts do cliente  
 
-## Stay in touch
+**src** → código da API NestJS  
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+**migrations** → migrações do banco de dados
 
-## License
+---
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+# Como executar o projeto localmente
+
+## 1. Clonar o repositório
+git clone <url-do-repositorio>
+cd <nome-do-projeto>
+
+---
+
+## 2. Instalar dependências
+npm install
+
+---
+
+## 3. Configurar variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto.
+
+Exemplo:
+DB_HOST=localhost
+DB_PORT=3306
+DB_USERNAME=root
+DB_PASSWORD=
+DB_NAME=tarefas
+
+JWT_SECRET=seu_segredo
+JWT_EXPIRES_IN=1d
+
+## 4. Executar o backend
+
+``bash
+npm run start:dev
+
+A API ficará disponível em:
+
+http://localhost:3000
+
+## 5. Abrir o frontend
+
+Abra o arquivo:
+
+frontend/login.html
+
+ou utilize uma extensão como Live Server no VS Code.
+
+Rotas principais da API:
+
+## Autenticação
+POST /auth/login
+
+## Usuários
+POST /users
+PUT /users/:id
+DELETE /users/:id
+
+
+## Tarefas
+GET /tarefas
+POST /tarefas
+PUT /tarefas/:id
+DELETE /tarefas/:id
+
+
+## Autenticação
+
+Após o login, a API retorna um token JWT que é armazenado no localStorage.
+
+Esse token é enviado nas requisições protegidas utilizando o header:
+
+Authorization: Bearer TOKEN
+
+## Melhorias futuras
+
+- Interface mais responsiva
+
+- Validação mais robusta no frontend
+
+- Paginação de tarefas
+
+- Melhor tratamento de erros
+
+
+## Autor
+
+Desenvolvido por Weberson.
